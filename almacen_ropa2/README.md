@@ -1,3 +1,105 @@
+# Almacén Ropa 2
+
+Pequeña tienda desarrollada en Laravel para gestionar productos, categorías, pedidos y pagos.
+
+Este repositorio contiene la aplicación usada para un proyecto local con XAMPP. Incluye un panel de administración y una tienda pública básica.
+
+## Contenido
+
+- `app/` - modelos, controladores y lógica de la aplicación.
+- `resources/views/` - vistas Blade para admin y tienda pública.
+- `database/migrations/` - migraciones (MV_ prefijo en tablas).
+- `database/seeders/` - seeders (admin y cliente de ejemplo).
+
+## Requisitos
+
+- PHP 8.x (según tu entorno XAMPP)
+- Composer
+- MySQL
+- Node.js + npm (opcional, para assets con Vite)
+
+## Instalación rápida (local)
+
+1. Clona el repositorio y entra en la carpeta del proyecto.
+2. Copia el .env y ajusta credenciales DB:
+
+```powershell
+copy .env.example .env
+```
+
+3. Instala dependencias PHP:
+
+```powershell
+composer install
+```
+
+4. Genera la clave de la aplicación:
+
+```powershell
+php artisan key:generate
+```
+
+5. Configura la base de datos en `.env` y ejecuta migraciones + seeders:
+
+```powershell
+php artisan migrate
+php artisan db:seed
+```
+
+6. Crea el enlace de almacenamiento (para imágenes):
+
+```powershell
+php artisan storage:link
+```
+
+7. Levanta el servidor local (opcional):
+
+```powershell
+php artisan serve
+```
+
+Accede por default en `http://127.0.0.1:8000` o mediante tu virtualhost en XAMPP.
+
+## Credenciales de prueba
+
+- Admin (si fue creado por el seeder):
+  - email: `admin@example.com`
+  - password: `Admin1234`
+
+- Cliente de ejemplo:
+  - email: `cliente@example.com`
+  - password: `Cliente1234`
+
+Si no existen, ejecuta `php artisan db:seed --class=CustomerSeeder` o revisa `database/seeders`.
+
+## Flujo principal
+
+- Panel admin: gestión de productos, categorías, pedidos y pagos.
+- Tienda pública: listado de productos, carrito en sesión, checkout que crea `MV_pedidos` y `MV_detalle_pedidos`.
+- Confirmación de pedido: `/order/{id}` — los clientes autenticados pueden registrar pagos.
+
+## Notas importantes
+
+- Las tablas principales usan prefijo `MV_` (por compatibilidad con la DB existente). Revisa modelos en `app/Models` para detalles.
+- Las imágenes de productos pueden ser URLs externas o archivos en `storage/app/public/products`.
+- Para permitir ver/confirmar pedidos sin login, se puede añadir un `access_token` al pedido (opcional).
+
+## Ejecutar tests
+
+Si tienes Pest/PHPUnit instalado en el proyecto:
+
+```powershell
+php artisan test
+# o
+vendor\bin\pest
+```
+
+## Contribuir
+
+Lee `CONTRIBUTING.md` para pautas de commits y estilo de ramas.
+
+---
+Generado: 2025-10-12
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
