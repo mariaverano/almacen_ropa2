@@ -16,9 +16,9 @@ Credenciales demo
 
 Qué hace el administrador
 
-El administrador accede al panel privado (ícono y menú lateral  ver captura en /resources o en la interfaz). Desde ahí puede:
+El administrador accede al panel privado 
 
-- Ver el dashboard con métricas básicas (pedidos recientes, ventas, productos bajos de stock).
+- Ver el dashboard  (pedidos recientes, ventas, productos bajos de stock).
 - Gestionar Productos: crear nuevos productos, editar datos (nombre, descripción, precio, stock, categoría), subir imágenes y eliminar productos. El CRUD de productos incluye validaciones de stock y relación con categorías.
 - Gestionar Categorías: crear/editar/borrar categorías. Cada producto pertenece a una categoría y la categoría se usa para filtrar el catálogo público.
 - Gestionar Pedidos: ver la lista de pedidos recibidos, abrir el detalle de cada pedido (productos, cantidades, precios, total, datos del cliente), cambiar el estado del pedido (por ejemplo: Pendiente  Procesando  Enviado  Entregado  Cancelado) y anotar observaciones.
@@ -61,4 +61,24 @@ Notas rápidas
 
 - Las rutas administrativas están protegidas por autenticación y middleware de administrador.
 - Revisa las migraciones en `database/migrations` para ver la estructura exacta de las tablas (`MV_productos`, `MV_categorias`, `MV_pedidos`, `MV_detalle_pedidos`, `MV_pagos`, `MV_usuarios`).
+
+  Tecnologias usadas
+  PHP 
+
+Lenguaje del lado servidor que ejecuta toda la lógica de la aplicación (controladores, modelos, migraciones y comandos artisan).
+Laravel (laravel/framework ^12)
+
+Framework PHP MVC usado para routing, controladores, Eloquent (ORM), migraciones, middleware y la estructura general de la app (autenticación, validaciones, jobs, etc.).
+MySQL
+
+Base de datos relacional donde se almacenan productos, categorías, usuarios, pedidos, detalle de pedidos y pagos.
+Composer
+
+Gestor de dependencias PHP; se usa para instalar/actualizar paquetes de Laravel y configurar el autoload (comando típico: composer install).
+
+
+Herramienta de desarrollo/bundling para los assets frontend (dev server rápido y vite build para producción). Integrada con Laravel mediante el plugin.
+Tailwind CSS
+
+Framework de utilidades CSS utilizado para los estilos de la interfaz en lugar de Bootstrap; permite componer diseño con clases utilitarias.
 
