@@ -1,18 +1,41 @@
-﻿Almacén Ropa 2
+﻿Almacén Ropa 2 — Resumen rápido
 
-Funcionalidades
+Funcionalidades principales
 
-- Catálogo de productos: ver listados y fichas de producto con fotos y descripción.
-- Carrito: añadir/quitar productos y ver el total.
-- Checkout: crear pedidos y ver resumen del pedido.
-- Gestión de pedidos: los clientes pueden ver sus pedidos y detalles.
-- Administración: panel para crear/editar/borrar productos y categorías, gestionar pedidos y registrar pagos.
-- Autenticación: login/logout para administrar y para clientes.
+- Catálogo de productos: navegación por categorías, búsqueda básica y fichas con imágenes, precio y stock.
+- Carrito: añadir y eliminar productos, ver resumen y total.
+- Checkout: crear pedido con los artículos del carrito.
+- Pedidos: los clientes pueden ver sus pedidos y el detalle de cada uno.
+- Administración (panel privado): crear/editar/borrar productos y categorías, ver y actualizar pedidos, registrar pagos.
+- Autenticación: Login/logout para administradores y clientes.
 
-Tecnologías
+Credenciales de ejemplo (demo)
 
-- Laravel (PHP) — backend y templates Blade
-- MySQL — base de datos
-- HTML/CSS/Blade + Tailwind/Vite — interfaz y assets
-- JavaScript (pequeñas interacciones en el cliente)
+- Administrador
+  - Email: admin@example.com
+  - Contraseña: Admin1234
+
+- Usuario de prueba
+  - Email: user@example.com
+  - Contraseña: User1234
+
+Tecnologías usadas
+
+- Laravel (PHP) para el backend y plantillas Blade
+- MySQL para la base de datos
+- Tailwind CSS + Vite para estilos y assets
+- JavaScript para interacciones del cliente
+
+Cómo empezar (en local)
+
+1. Copia el proyecto y crea un archivo `.env` a partir de `.env.example`.
+2. Configura la conexión a la base de datos (MySQL).
+3. Ejecuta:
+
+   composer install
+   npm install
+   npm run build
+   php artisan migrate --seed
+
+4. Accede al panel con las credenciales de administrador de demo.
 
