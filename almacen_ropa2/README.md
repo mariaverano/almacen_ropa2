@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Almacén Ropa 2 — Resumen rápido
 
 Funcionalidades principales
@@ -38,4 +39,7 @@ Cómo empezar (en local)
    php artisan migrate --seed
 
 4. Accede al panel con las credenciales de administrador de demo.
+=======
+﻿
+>>>>>>> 9cd14fdf3d5c179f42a8c81d27b5c2725011f1dc
 
